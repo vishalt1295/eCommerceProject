@@ -1,0 +1,42 @@
+@import url(global.css);
+
+/*.navbar-toggler.active {
+    height: 50px;
+} */
+
+/*.navbar-toggler {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}*/
+
+.active, .navbar-toggler:hover {
+    /*background-color: #555;*/
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar-toggler.active {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar-collapse {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
