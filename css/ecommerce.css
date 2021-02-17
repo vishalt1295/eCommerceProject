@@ -40,3 +40,8 @@
     display: none;
     overflow: hidden;
 }
+
+.dropdown-menu {
+    box-shadow: var(--shadowDark2dp);
+    border: unset;
+}
