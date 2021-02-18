@@ -18,6 +18,10 @@ function dropdownMenu(a) {
     a.parentNode.getElementsByClassName("dropdown-menu")[0].classList.toggle("show");
 }
 
+// Get selected mode
+function toggle_mode() {
+localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'bright' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark'); save_state();
+}
 // Used to switch between light and dark mode
 document.addEventListener('DOMContentLoaded', (event) => {
     ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark'): document.querySelector('body').classList.remove('dark')

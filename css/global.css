@@ -110,6 +110,9 @@ body {
     transition: all 0.5s ease;
 }
 
+
+
+
 /* Card */
 .card {
     border: 0;
@@ -303,7 +306,7 @@ body {
 
 /* Dark Mode */
 body.dark {
-    background-color: #111;
+    background-color: #2e2e2e;
     color: #fff;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -327,11 +330,28 @@ body.dark h5.card-title a {
     text-decoration: none;
 }
 
+body.dark .bg-dark {
+    background-color: #343a40!important;
+}
+
+body.dark .dropdown-menu {
+    background-color: #2a2b30!important;
+    color: #fff;
+}
+
+body.dark .dropdown-item:focus, .dropdown-item:hover {
+    background-color: #4361ee;
+    color: #fff;
+}
+body.dark .dropdown-item {
+    color: #fff;
+}
+
 /* Footer */
 footer.page-footer {
     margin-top: 20px;
     padding-top: 20px;
-    background-color: #000;
+    background-color: #252525 !important;
     color: #fff;
 }
 

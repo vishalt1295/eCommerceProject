@@ -6,12 +6,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ecommerce.css">
-    <title>Title</title>
+    <title>MotionTech</title>
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,15 +20,14 @@
     <div class="navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Product List</a>
+                <a class="nav-link" href="productList.html">Product List</a>
             </li>
             <li class="nav-item" title="Light/Dark Mode">
                 <a class="nav-link">
-                    <input type="checkbox" id="cbx" style="display:none" value="save"
-                           onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'bright' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark'); save_state()"/>
+                    <input type="checkbox" id="cbx" style="display:none" value="save" onclick="toggle_mode()"/>
                     <label for="cbx" class="toggle"><span></span></label>
                 </a>
             </li>
@@ -41,15 +40,15 @@
     <div class="row">
         <div class="col-md-4 mt-4">
             <h6>Order By</h6>
-            <div class="dropdown" id="order-by">
-                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown" id="orderBy" name="orderBy">
+                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Order By
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#name" value="name">Name</a>
+                    <!--<a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>-->
                 </div>
             </div>
         </div>
@@ -57,14 +56,14 @@
         <div class="col-md-4 mt-4">
             <h6>Price Range</h6>
             <div class="dropdown" id="price_range">
-                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button" id="dropdownMenuButton"
+                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button"
+                        id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Price Range
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Low to High</a>
+                    <a class="dropdown-item" href="#">High to Low</a>
                 </div>
             </div>
         </div>
@@ -72,7 +71,8 @@
         <div class="col-md-4 mt-4">
             <h6>Category</h6>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button" id="dropdownMenuButton"
+                <button class="btn btn-secondary dropdown-toggle" onClick="dropdownMenu(this)" type="button"
+                        id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown button
                 </button>
@@ -84,79 +84,25 @@
             </div>
         </div>
 
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        <div class="row" id="addProducts"></div>
+
+        <!--<div class="col-md-4 mt-4">
+                <div class="card" id="addProducts">
+                    <-img src="#" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>-
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+
 
 
 <!-- Footer -->
@@ -192,6 +138,6 @@
     </div>
 </footer>
 <script src="js/main.js"></script>
-<script src="js/landing.js"></script>
+<script src="js/productList.js"></script>
 </body>
 </html>

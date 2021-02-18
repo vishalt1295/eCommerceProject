@@ -1,5 +1,4 @@
-@import url(global.css);
-
+@import "global.css";
 /*.navbar-toggler.active {
     height: 50px;
 } */
@@ -23,11 +22,6 @@
     transition: all 0.5s ease;
 }
 
-.navbar {
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
 
 .navbar-toggler.active {
     -webkit-transition: all 0.5s ease;
@@ -41,7 +35,19 @@
     overflow: hidden;
 }
 
+.navbar {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    box-shadow: var(--shadowDark4dp)!important;
+}
+
+.bg-dark {
+    background-color: #4361ee!important;
+}
+
 .dropdown-menu {
     box-shadow: var(--shadowDark2dp);
     border: unset;
 }
+
